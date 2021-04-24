@@ -1,15 +1,17 @@
-// Sort() is an in-built function of the <algorithm> library.
-
 #include <iostream>
 #include <algorithm> // needed in order to use sort()
 #include <vector>    // needed in order to use vector
+
+bool wayToSort (int i, int j){
+    return i > j; // Return TRUE if i is greater than j
+}
 
 int main() {
     
     int arr[] = {5,4,6,8,7,9,2,1,3};
     std::vector<int> vec = {8,5,2,1,4,7,9,6,3};
     
-    std::sort(arr,arr+9);
+    std::sort(arr,arr+9,wayToSort); //Sort it descendent
     std::sort(vec.begin(),vec.end());
     
     for(int a:arr)
